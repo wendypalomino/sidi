@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidi</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="container__title">
+            <h1>Documentos</h1>
+        </div>
+        <div class="container__path">
+            <label>Ruta:</label>
+            <input type="text"/>
+        </div>
+        <div class="container__icons">
+            <div class="container__icons--list">
+                <img src="./icons/add-folder.svg"  alt="add-folder" />
+                <img src="./icons/upload-file.svg"  alt="upload-file" />
+                <img src="./icons/download-file.svg"  alt="download-file" />
+                <img src="./icons/delete-file.svg"  alt="delete-file" />
+            </div>
+            <div class="container__icons--filter">
+                <label>Filtrar:</label>
+                <input type="text"/> 
+            </div>
+        </div>
+        <div class="container__sidebar">
+            <ul id="ul">
+                <li><span class="caret">Item</span>
+                    <ul class="nested">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li><span class="caret">Item3</span>
+                            <ul class="nested">
+                                <li>Item 3.1</li>
+                                <li>Item 3.2</li>
+                                <li><span class="caret">Item 3.3</span>
+                                    <ul class="nested">
+                                        <li>Item 3.3.1</li>
+                                        <li>Item 3.3.2</li>
+                                        <li>Item 3.3.3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul> 
+        </div>
+        <div class="container__content">
+            <div class="container__content--1">
+                <div>
+                    <span class="file"><img src="./icons/pdf-file.svg"/>file.pdf</span>
+                </div>
+                <div>
+                    <span class="file"><img src="./icons/image-file.svg"/>image.svg</span>
+                </div>
+                <div>
+                    <span class="file"><img src="./icons/file.svg"/>file.txt</span>
+                </div>
+            </div>
+            <div class="container__content--2">2</div>
+            <div class="container__content--3">3</div>
+            <div class="container__content--4">4</div>
+        </div>    
+    </div>
+    <script type="text/javascript">
+
+        let toggler = document.getElementsByClassName('caret');
+        let i;
+
+        for(i=0; i < toggler.length; i++){
+            toggler[i].addEventListener('click', function(){
+                this.parentElement.querySelector('.nested').classList.toggle('active')    
+            });
+        }
+
+    </script> 
+</body>
+</html>
